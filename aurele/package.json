@@ -1,0 +1,19 @@
+{
+  "name": "aurele",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prahar: a fictional Bombay watchmaker. Showpiece site with a procedural real-time 3D watch.",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/main.js --bundle --minify --format=iife --target=es2020 --outfile=assets/app.js",
+    "dev": "esbuild src/main.js --bundle --format=iife --target=es2020 --sourcemap --outfile=assets/app.js --watch",
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "lenis": "^1.1.18",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
+}

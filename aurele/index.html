@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aurèle · The Méridien, a hand-wound wristwatch from Genève</title>
+<meta name="description" content="The Aurèle Méridien: a hand-wound wristwatch with a day and night ring, in yellow gold, steel or rose gold. A fictional maison, built as a showpiece.">
+<meta name="theme-color" content="#0c0b09">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c0b09'/%3E%3Cpath d='M16 6 24.5 26h-3l-2-5h-7l-2 5h-3Zm0 6-2.6 6.6h5.2Z' fill='%23c2a468'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/cormorant.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jost.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/styles.css">
+<script>
+  (function () {
+    var d = document.documentElement;
+    d.className += ' js';
+    if (/[?&]motion=reduce/.test(location.search) || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) d.className += ' reduce';
+  })();
+</script>
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <p class="loader__mark">Aurèle</p>
+  <span class="loader__track"><span class="loader__bar" id="loaderBar"></span></span>
+  <p class="loader__place">Genève</p>
+</div>
+
+<canvas class="gl" id="gl" aria-hidden="true"></canvas>
+
+<header class="nav" id="nav">
+  <nav class="nav__links nav__links--left" aria-label="Sections">
+    <a href="#watch">The watch</a>
+    <a href="#collection">Collection</a>
+  </nav>
+  <a class="nav__mark" href="#top" aria-label="Aurèle, back to the top">Aurèle</a>
+  <nav class="nav__links nav__links--right" aria-label="More">
+    <a href="#specifications">Specifications</a>
+    <a href="#appointment">Appointment</a>
+  </nav>
+  <button class="nav__toggle" id="menuToggle" aria-expanded="false" aria-controls="menu">Menu</button>
+</header>
+
+<div class="menu" id="menu">
+  <a href="#watch">The watch</a>
+  <a href="#collection">Collection</a>
+  <a href="#specifications">Specifications</a>
+  <a href="#savoir-faire">Savoir-faire</a>
+  <a href="#appointment">Appointment</a>
+</div>
+
+<main>
+
+<section class="hero on-dark" id="top">
+  <div class="hero__stage" data-stage="hero" aria-hidden="true"><div class="hero__flat" id="flatWatch"></div></div>
+  <div class="hero__copy">
+    <p class="kicker rise">Aurèle · Genève</p>
+    <h1 class="hero__title"><span class="mask"><span>Méridien</span></span></h1>
+    <p class="hero__lede rise">A hand-wound wristwatch with a ring for day and night, finished by hand on both sides.</p>
+    <div class="hero__actions rise">
+      <a class="btn" href="#appointment">Book an appointment</a>
+      <a class="link" href="#watch">Discover the watch</a>
+    </div>
+  </div>
+  <p class="hero__now rise" id="heroNow">The hands on this page are set to your own time.</p>
+</section>
+
+<section class="story on-dark" id="watch" aria-label="The watch, part by part">
+  <article class="panel" data-stage="tell">
+    <div class="panel__copy">
+      <p class="kicker">The dial</p>
+      <h2 class="h3">A ring for day and night</h2>
+      <p>Beneath the hands, a ring of ivory and midnight enamel turns once in twenty-four hours. What rests under the pointer at twelve tells you which half of the day you are in.</p>
+    </div>
+  </article>
+  <article class="panel" data-stage="open">
+    <div class="panel__copy">
+      <p class="kicker">Architecture</p>
+      <h2 class="h3">One hundred and eighty-eight parts</h2>
+      <p>The Méridien comes apart in the order a watchmaker lifts it: crystal, bezel, hands, dial, then calibre A·01. Each part you see is drawn live.</p>
+    </div>
+  </article>
+  <article class="panel" data-stage="wind">
+    <div class="panel__copy">
+      <p class="kicker">Winding</p>
+      <h2 class="h3">Seventy-two hours in reserve</h2>
+      <p>Forty turns of the crown pass through two steel wheels and coil the mainspring in its barrel. It releases its force over three days.</p>
+    </div>
+  </article>
+  <article class="panel" data-stage="turn">
+    <div class="panel__copy">
+      <p class="kicker">Going train</p>
+      <h2 class="h3">Four wheels, at their true speed</h2>
+      <p>Tooth into leaf, four gilt wheels gear the barrel's slow pull upward until the last completes one turn a minute. Nothing here is hurried for the camera.</p>
+    </div>
+  </article>
+  <article class="panel" data-stage="beat">
+    <div class="panel__copy">
+      <p class="kicker">Escapement</p>
+      <h2 class="h3">Six beats to the second</h2>
+      <p>The balance swings six times a second beneath its bridge. Each swing lets the escape wheel advance by half a tooth, and that small release is the tick.</p>
+    </div>
+  </article>
+</section>
+
+<section class="collection on-light" id="collection" aria-labelledby="collectionTitle">
+  <div class="wrap collection__head">
+    <p class="kicker rise">The collection</p>
+    <h2 class="h2 rise" id="collectionTitle">Three references, one calibre</h2>
+  </div>
+  <div class="wrap collection__grid">
+    <div class="collection__stage" data-stage="price" aria-hidden="true"></div>
+    <fieldset class="refs rise" id="refs">
+      <legend class="sr-only">Choose a reference</legend>
+      <label class="ref">
+        <input type="radio" name="ref" value="vert" checked>
+        <span class="ref__chip" style="--metal:#e6bf6e;--dial:#0e3a2b"></span>
+        <span class="ref__body"><span class="ref__name">Méridien Vert</span><span class="ref__meta">Yellow gold · Forest green lacquer · Ref. M39·01</span></span>
+        <span class="ref__price">₹ 16,40,000</span>
+      </label>
+      <label class="ref">
+        <input type="radio" name="ref" value="noir">
+        <span class="ref__chip" style="--metal:#d3d7dc;--dial:#101012"></span>
+        <span class="ref__body"><span class="ref__name">Méridien Noir</span><span class="ref__meta">Steel · Black lacquer · Ref. M39·02</span></span>
+        <span class="ref__price">₹ 4,80,000</span>
+      </label>
+      <label class="ref">
+        <input type="radio" name="ref" value="ivoire">
+        <span class="ref__chip" style="--metal:#e2ab92;--dial:#e6dcc6"></span>
+        <span class="ref__body"><span class="ref__name">Méridien Ivoire</span><span class="ref__meta">Rose gold · Ivory grained dial · Ref. M39·03</span></span>
+        <span class="ref__price">₹ 16,90,000</span>
+      </label>
+      <p class="refs__note">Prices include taxes in India, a five-year guarantee and the first service. Each watch is made to order in about fourteen weeks.</p>
+      <a class="btn btn--dark" href="#appointment">Book an appointment</a>
+    </fieldset>
+  </div>
+</section>
+
+<section class="specs on-light" id="specifications" data-stage="hide" aria-labelledby="specsTitle">
+  <div class="wrap specs__grid">
+    <div class="specs__head">
+      <p class="kicker rise">Specifications</p>
+      <h2 class="h2 rise" id="specsTitle">The Méridien in detail</h2>
+    </div>
+    <dl class="specs__list rise">
+      <div><dt>Case</dt><dd>39 mm, 10.4 mm thick, in 18 ct gold or steel</dd></div>
+      <div><dt>Finish</dt><dd>Satin flanks, polished bezel and lugs</dd></div>
+      <div><dt>Crystal</dt><dd>Domed sapphire, sapphire caseback</dd></div>
+      <div><dt>Water resistance</dt><dd>50 metres</dd></div>
+      <div><dt>Movement</dt><dd>Calibre A·01, hand-wound</dd></div>
+      <div><dt>Components</dt><dd>188 parts, 21 jewels in gold chatons</dd></div>
+      <div><dt>Frequency</dt><dd>21,600 vibrations an hour (3 Hz)</dd></div>
+      <div><dt>Power reserve</dt><dd>72 hours</dd></div>
+      <div><dt>Functions</dt><dd>Hours, minutes, seconds, day and night ring</dd></div>
+      <div><dt>Dial</dt><dd>Sunray lacquer, applied markers, enamel ring</dd></div>
+      <div><dt>Strap</dt><dd>Black calf leather, 20 mm, pin buckle</dd></div>
+      <div><dt>Guarantee</dt><dd>Five years, first service included</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="craft on-dark" id="savoir-faire" aria-labelledby="craftTitle">
+  <div class="wrap craft__grid">
+    <div class="craft__copy">
+      <p class="kicker rise">Savoir-faire</p>
+      <h2 class="h2 rise" id="craftTitle">Finished by hand, on both sides</h2>
+      <p class="rise">Turn the Méridien over and the calibre is in plain view: striped bridges, blued screws, jewels set in gold. The side nobody sees is finished to the same standard as the dial.</p>
+      <dl class="figures">
+        <div class="rise"><dt>188</dt><dd>parts, each finished before it is fitted</dd></div>
+        <div class="rise"><dt>72</dt><dd>hours of running from a full wind</dd></div>
+        <div class="rise"><dt>88</dt><dd>watches leave the atelier each year</dd></div>
+      </dl>
+    </div>
+    <div class="craft__stage" data-stage="back" aria-hidden="true"></div>
+  </div>
+</section>
+
+<section class="visit" id="appointment" data-stage="hide" aria-labelledby="visitTitle">
+  <div class="wrap visit__inner">
+    <p class="kicker rise">By appointment</p>
+    <h2 class="visit__title rise" id="visitTitle">See it on the wrist, in Genève</h2>
+    <p class="visit__text rise">Write to the salon with the reference you prefer. We reply within two days and hold the watch for your visit.</p>
+    <a class="btn rise" id="visitLink" href="mailto:salon@aurele.example?subject=Appointment%20%E2%80%94%20M%C3%A9ridien%20Vert">Request an appointment</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot" data-stage="hide">
+  <p class="foot__mark" aria-hidden="true">Aurèle</p>
+  <div class="wrap foot__cols">
+    <address>
+      <span class="foot__label">Salon</span>
+      <span>7 rue de la Corraterie</span>
+      <span>1204 Genève</span>
+    </address>
+    <div>
+      <span class="foot__label">Contact</span>
+      <a href="mailto:salon@aurele.example">salon@aurele.example</a>
+      <span>Tuesday to Saturday, by appointment</span>
+    </div>
+    <div>
+      <span class="foot__label">Genève</span>
+      <span id="footClock">Local time</span>
+    </div>
+  </div>
+  <p class="wrap foot__legal">Aurèle is a fictional maison and the Méridien does not exist. This site is a showpiece: nothing is for sale.</p>
+</footer>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>
